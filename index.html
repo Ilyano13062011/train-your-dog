@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Train Your Dog 🐶</title>
 
 <style>
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #fff7ed;
+    font-family: Arial;
     text-align: center;
+    background: #fff3e0;
 }
 
 header {
@@ -20,62 +18,37 @@ header {
     font-size: 28px;
 }
 
-.container {
-    padding: 20px;
-}
-
 button {
-    padding: 12px 20px;
+    padding: 10px;
+    margin: 10px;
     font-size: 16px;
     border: none;
-    border-radius: 10px;
     background: orange;
     color: white;
     cursor: pointer;
 }
 
-.box {
-    background: white;
-    margin: 20px auto;
-    padding: 20px;
-    width: 300px;
-    border-radius: 15px;
-}
-
 .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+    margin-top: 20px;
 }
 
 .card {
+    display: inline-block;
     width: 200px;
+    margin: 10px;
     background: white;
-    border-radius: 15px;
-    overflow: hidden;
+    border-radius: 10px;
     cursor: pointer;
 }
 
 .card img {
     width: 100%;
-    height: 150px;
-    object-fit: cover;
-}
-
-.card p {
-    padding: 10px;
 }
 
 #info {
-    margin: 20px;
+    margin-top: 20px;
     font-size: 18px;
-}
-
-footer {
-    background: orange;
-    color: white;
-    padding: 15px;
+    padding: 10px;
 }
 </style>
 </head>
@@ -84,60 +57,45 @@ footer {
 
 <header>🐶 Train Your Dog</header>
 
-<div class="container">
-
-<h2>🎯 Challenge generator</h2>
-<p id="challenge">Klik op de knop!</p>
+<h2>🎯 Challenge</h2>
+<p id="challenge">Klik op de knop</p>
 <button onclick="nieuweChallenge()">Nieuwe challenge</button>
 
-<div class="box">
-🏆 Score: <span id="score">0</span>
-</div>
+<p>🏆 Score: <span id="score">0</span></p>
 
 <div class="gallery">
 
-<div class="card" onclick="toonInfo('🐾 Balans: Laat je hond met zijn poten op iets staan. Beloon rustig gedrag.')">
-<img src="https://placedog.net/400/300?id=1">
+<div class="card" onclick="toonInfo('Balans: laat je hond met poten op iets staan en beloon')">
+<img src="https://placedog.net/200/150?id=1">
 <p>Balans</p>
 </div>
 
-<div class="card" onclick="toonInfo('🎯 Focus: Beloon wanneer je hond naar jou kijkt.')">
-<img src="https://placedog.net/400/300?id=2">
+<div class="card" onclick="toonInfo('Focus: beloon als je hond naar jou kijkt')">
+<img src="https://placedog.net/200/150?id=2">
 <p>Focus</p>
 </div>
 
-<div class="card" onclick="toonInfo('🌀 Draaien: Lok met een snoepje in een rondje.')">
-<img src="https://placedog.net/400/300?id=3">
+<div class="card" onclick="toonInfo('Draaien: lok je hond in een rondje')">
+<img src="https://placedog.net/200/150?id=3">
 <p>Draaien</p>
 </div>
 
-<div class="card" onclick="toonInfo('🤝 Pootje: Tik zachtjes tegen de poot en beloon.')">
-<img src="https://placedog.net/400/300?id=4">
+<div class="card" onclick="toonInfo('Pootje: tik tegen de poot en beloon')">
+<img src="https://placedog.net/200/150?id=4">
 <p>Pootje</p>
 </div>
 
 </div>
 
-<p id="info"></p>
-
-</div>
-
-<footer>❤️ Veel plezier!</footer>
+<p id="info">Klik op een oefening</p>
 
 <script>
 let score = 0;
 
-const challenges = [
-    "Laat je hond zitten 🐶",
-    "Geef 3 pootjes 🤝",
-    "Laat je hond liggen 💤",
-    "Roep je hond bij je 📢"
-];
-
 function nieuweChallenge() {
-    let random = Math.floor(Math.random() * challenges.length);
-    document.getElementById("challenge").innerText = challenges[random];
-
+    let lijst = ["Zit", "Lig", "Kom", "Draai"];
+    let random = Math.floor(Math.random() * lijst.length);
+    document.getElementById("challenge").innerText = lijst[random];
     score++;
     document.getElementById("score").innerText = score;
 }
