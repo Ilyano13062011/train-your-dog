@@ -1,109 +1,233 @@
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 <head>
-<meta charset="UTF-8">
-<title>Train Your Dog 🐶</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Train Your Dog 🐶</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff6eb;
+      color: #333;
+      text-align: center;
+    }
 
-<style>
-body {
-    font-family: Arial;
-    text-align: center;
-    background: #fff3e0;
-}
+    header {
+      background: linear-gradient(135deg, #ff8a00, #ffb347);
+      color: white;
+      padding: 28px 20px;
+      font-size: 32px;
+      font-weight: bold;
+    }
 
-header {
-    background: orange;
-    color: white;
-    padding: 20px;
-    font-size: 28px;
-}
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 25px 18px 40px;
+    }
 
-button {
-    padding: 10px;
-    margin: 10px;
-    font-size: 16px;
-    border: none;
-    background: orange;
-    color: white;
-    cursor: pointer;
-}
+    .intro {
+      background: white;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      margin-bottom: 25px;
+    }
 
-.gallery {
-    margin-top: 20px;
-}
+    .intro h1 {
+      margin-top: 0;
+      font-size: 34px;
+    }
 
-.card {
-    display: inline-block;
-    width: 200px;
-    margin: 10px;
-    background: white;
-    border-radius: 10px;
-    cursor: pointer;
-}
+    .intro p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
 
-.card img {
-    width: 100%;
-}
+    .challenge-box {
+      background: white;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      max-width: 420px;
+      margin: 0 auto 25px;
+    }
 
-#info {
-    margin-top: 20px;
-    font-size: 18px;
-    padding: 10px;
-}
-</style>
+    .challenge-box h2 {
+      margin-top: 0;
+    }
+
+    #challenge {
+      font-size: 22px;
+      font-weight: bold;
+      min-height: 34px;
+    }
+
+    button {
+      background: #ff8a00;
+      color: white;
+      border: none;
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #e97900;
+    }
+
+    .score {
+      background: white;
+      border-radius: 16px;
+      padding: 14px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      max-width: 260px;
+      margin: 0 auto 30px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .section-title {
+      font-size: 28px;
+      margin: 10px 0 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      display: block;
+      text-decoration: none;
+      color: #333;
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+    }
+
+    .card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      padding: 16px;
+    }
+
+    .card-content h3 {
+      margin: 0 0 8px;
+      font-size: 22px;
+    }
+
+    .card-content p {
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    footer {
+      background: #ff8a00;
+      color: white;
+      padding: 18px;
+      margin-top: 35px;
+      font-size: 17px;
+    }
+  </style>
 </head>
-
 <body>
 
-<header>🐶 Train Your Dog</header>
+  <header>🐶 Train Your Dog</header>
 
-<h2>🎯 Challenge</h2>
-<p id="challenge">Klik op de knop</p>
-<button onclick="nieuweChallenge()">Nieuwe challenge</button>
+  <div class="container">
+    <div class="intro">
+      <h1>Train, speel en leer samen!</h1>
+      <p>
+        Welkom op Train Your Dog. Klik op een oefening hieronder en ontdek stap voor stap
+        hoe je die kan aanleren, met handige tips om het leuk en duidelijk te houden voor je hond.
+      </p>
+    </div>
 
-<p>🏆 Score: <span id="score">0</span></p>
+    <div class="challenge-box">
+      <h2>🎯 Challenge van de dag</h2>
+      <p id="challenge">Klik op de knop!</p>
+      <button onclick="nieuweChallenge()">Nieuwe challenge</button>
+    </div>
 
-<div class="gallery">
+    <div class="score">
+      🏆 Score: <span id="score">0</span>
+    </div>
 
-<div class="card" onclick="toonInfo('Balans: laat je hond met poten op iets staan en beloon')">
-<img src="https://placedog.net/200/150?id=1">
-<p>Balans</p>
-</div>
+    <h2 class="section-title">Kies een oefening</h2>
 
-<div class="card" onclick="toonInfo('Focus: beloon als je hond naar jou kijkt')">
-<img src="https://placedog.net/200/150?id=2">
-<p>Focus</p>
-</div>
+    <div class="gallery">
+      <a href="balans.html" class="card">
+        <img src="https://placedog.net/500/350?id=1" alt="Balans oefening hond">
+        <div class="card-content">
+          <h3>🐾 Balans</h3>
+          <p>Klik voor veel uitleg, stapjes en tips om balans rustig op te bouwen.</p>
+        </div>
+      </a>
 
-<div class="card" onclick="toonInfo('Draaien: lok je hond in een rondje')">
-<img src="https://placedog.net/200/150?id=3">
-<p>Draaien</p>
-</div>
+      <a href="focus.html" class="card">
+        <img src="https://placedog.net/500/350?id=2" alt="Focus oefening hond">
+        <div class="card-content">
+          <h3>🎯 Focus</h3>
+          <p>Leer hoe je je hond helpt om aandacht voor jou te krijgen op een leuke manier.</p>
+        </div>
+      </a>
 
-<div class="card" onclick="toonInfo('Pootje: tik tegen de poot en beloon')">
-<img src="https://placedog.net/200/150?id=4">
-<p>Pootje</p>
-</div>
+      <a href="draaien.html" class="card">
+        <img src="https://placedog.net/500/350?id=3" alt="Draaien truc hond">
+        <div class="card-content">
+          <h3>🌀 Draaien</h3>
+          <p>Ontdek hoe je de draai-truc stap voor stap kan oefenen met beloningen.</p>
+        </div>
+      </a>
 
-</div>
+      <a href="pootje.html" class="card">
+        <img src="https://placedog.net/500/350?id=4" alt="Pootje geven hond">
+        <div class="card-content">
+          <h3>🤝 Pootje</h3>
+          <p>Klik voor uitleg en tips om pootje geven rustig en duidelijk aan te leren.</p>
+        </div>
+      </a>
+    </div>
+  </div>
 
-<p id="info">Klik op een oefening</p>
+  <footer>❤️ Veel plezier met trainen!</footer>
 
-<script>
-let score = 0;
+  <script>
+    let score = 0;
 
-function nieuweChallenge() {
-    let lijst = ["Zit", "Lig", "Kom", "Draai"];
-    let random = Math.floor(Math.random() * lijst.length);
-    document.getElementById("challenge").innerText = lijst[random];
-    score++;
-    document.getElementById("score").innerText = score;
-}
+    const challenges = [
+      "Oefen vandaag 3 keer zit 🐶",
+      "Doe vandaag 5 seconden focus 🎯",
+      "Oefen 2 rustige rondjes draaien 🌀",
+      "Vraag 3 keer pootje 🤝",
+      "Laat je hond 5 seconden wachten ⏳",
+      "Beloon vandaag extra kalm gedrag 🌟"
+    ];
 
-function toonInfo(text) {
-    document.getElementById("info").innerText = text;
-}
-</script>
+    function nieuweChallenge() {
+      const random = Math.floor(Math.random() * challenges.length);
+      document.getElementById("challenge").innerText = challenges[random];
+      score++;
+      document.getElementById("score").innerText = score;
+    }
+  </script>
 
 </body>
 </html>
