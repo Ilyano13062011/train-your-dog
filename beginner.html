@@ -5,52 +5,25 @@
 <title>Beginner Training</title>
 
 <style>
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #f9f6f2;
-    margin: 0;
-}
+body { font-family:'Segoe UI'; background:#f9f6f2; margin:0; }
 
-header {
-    background: #4CAF50;
-    color: white;
-    padding: 30px;
-    text-align: center;
-    font-size: 28px;
-}
+header { background:#4CAF50; color:white; padding:30px; text-align:center; }
 
-.container {
-    max-width: 700px;
-    margin: auto;
-    padding: 20px;
-}
+.container { max-width:700px; margin:auto; padding:20px; }
 
-.section {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    margin-bottom: 20px;
-}
+.section { background:white; padding:25px; border-radius:15px; margin-bottom:20px; }
 
 button {
-    padding: 12px 18px;
-    font-size: 16px;
-    background: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin: 5px;
+padding:12px 18px;
+background:#4CAF50;
+color:white;
+border:none;
+border-radius:8px;
+margin:5px;
+cursor:pointer;
 }
 
-.video-btn {
-    background: #2196F3;
-}
-
-.back {
-    text-decoration: none;
-    color: #4CAF50;
-}
+.video-btn { background:#2196F3; }
 </style>
 </head>
 
@@ -61,24 +34,17 @@ button {
 <div class="container">
 
 <div class="section">
-<h2>Doel van deze training</h2>
-<p>Basis oefeningen voor rust en samenwerking.</p>
-</div>
-
-<div class="section">
 <h2>Oefening</h2>
-<p id="challenge">Klik hieronder om een oefening te krijgen.</p>
+<p id="challenge">Klik op start</p>
 
 <button onclick="nieuweChallenge()">Nieuwe oefening</button>
-<button class="video-btn" onclick="openVideo()">🎥 Bekijk uitleg</button>
+<button class="video-btn" onclick="openVideo()">🎥 Video</button>
 </div>
 
 <div class="section">
 <h2>Tip</h2>
 <p id="tip"></p>
 </div>
-
-<a href="levels.html" class="back">⬅ Terug</a>
 
 </div>
 
@@ -88,7 +54,7 @@ let currentVideo = "";
 const oefeningen = [
 {
 tekst:"Zitten",
-tip:"Wacht tot je hond zelf zit en beloon",
+tip:"Gebruik een snoepje boven het hoofd",
 video:"https://www.youtube.com/watch?v=Qm9v1m3yX5g"
 },
 {
@@ -102,9 +68,9 @@ tip:"Tik zacht tegen de poot",
 video:"https://www.youtube.com/watch?v=YJv1m2s9QWk"
 },
 {
-tekst:"Komen (hier)",
-tip:"Roep vrolijk en beloon",
-video:"https://www.youtube.com/watch?v=6b3v3Y4d5Kk"
+tekst:"Hier komen",
+tip:"Roep vrolijk",
+video:"https://www.youtube.com/watch?v=Z3mZ7Yy3XwQ"
 }
 ];
 
@@ -119,6 +85,8 @@ currentVideo = oefeningen[r].video;
 function openVideo(){
 if(currentVideo){
 window.open(currentVideo, "_blank");
+} else {
+alert("Klik eerst op een oefening");
 }
 }
 </script>
