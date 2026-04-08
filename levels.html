@@ -8,19 +8,25 @@
 <style>
 body { font-family:'Segoe UI'; background:#f9f6f2; margin:0; text-align:center; }
 
+.cards {
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:20px;
+}
+
 .card {
-display:inline-block;
-width:260px;
-margin:20px;
 background:white;
 border-radius:15px;
-padding:20px;
+overflow:hidden;
 text-decoration:none;
 color:black;
 }
 
-@media(max-width:600px){
-.card { width:90%; }
+.card img {
+width:100%;
+height:180px;
+object-fit:cover;
 }
 </style>
 </head>
@@ -29,20 +35,24 @@ color:black;
 
 <h1>Kies jouw niveau</h1>
 
+<div class="cards">
+
 <a href="beginner.html" class="card">
+<img src="https://placedog.net/400/300?id=4">
 <h2>Beginner</h2>
-<p>Start met de basis</p>
 </a>
 
 <a href="gevorderd.html" class="card">
+<img src="https://placedog.net/400/300?id=5">
 <h2>Gevorderd</h2>
-<p>Meer uitdaging</p>
 </a>
 
 <a href="expert.html" class="card">
+<img src="https://placedog.net/400/300?id=6">
 <h2>Expert</h2>
-<p>Voor gevorderde honden</p>
 </a>
+
+</div>
 
 </body>
 </html>
