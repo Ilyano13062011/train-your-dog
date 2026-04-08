@@ -3,26 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Expert</title>
+<title>Gevorderd</title>
 
 <style>
 body { font-family:'Segoe UI'; background:#f9f6f2; margin:0; }
 
-header { background:#f44336; color:white; text-align:center; padding:20px; }
+header { background:#ff9800; color:white; text-align:center; padding:20px; }
 
-.container { max-width:700px; margin:auto; padding:20px; }
+.wrapper {
+display:flex;
+max-width:1100px;
+margin:auto;
+padding:20px;
+gap:20px;
+}
+
+.logo { width:200px; }
+
+.logo img { width:100%; border-radius:10px; }
+
+.main { flex:1; }
 
 .section { background:white; padding:20px; border-radius:15px; margin-bottom:20px; }
 
-button { padding:12px; background:#f44336; color:white; border:none; border-radius:8px; }
+button { padding:12px; background:#ff9800; color:white; border:none; border-radius:8px; }
+
+@media(max-width:800px){
+.wrapper { flex-direction:column; }
+.logo { width:100%; }
+}
 </style>
 </head>
 
 <body>
 
-<header>Expert Training</header>
+<header>Gevorderd Training</header>
 
-<div class="container">
+<div class="wrapper">
+
+<div class="logo">
+<img src="https://images.unsplash.com/photo-1558788353-f76d92427f16">
+</div>
+
+<div class="main">
 
 <div class="section">
 <h2>Oefening</h2>
@@ -37,15 +60,15 @@ button { padding:12px; background:#f44336; color:white; border:none; border-radi
 
 </div>
 
+</div>
+
 <script>
 const oefeningen=[
-{t:"Balans",tip:"Werk langzaam"},
-{t:"Rondjes",tip:"Gebruik signalen"},
-{t:"Achteruit lopen",tip:"Lok stappen"},
-{t:"Focus met afleiding",tip:"Begin licht"},
-{t:"Blijf 10 sec",tip:"Verleng"},
-{t:"Combinatie oefeningen",tip:"Werk stap voor stap"},
-{t:"Precision volgen",tip:"Let op positie"}
+{t:"Slalom",tip:"Leid rustig"},
+{t:"Focus",tip:"Beloon kijken"},
+{t:"Volgen",tip:"Let op positie"},
+{t:"Zoek oefening",tip:"Verstop snoepje"},
+{t:"Blijf",tip:"Stap rustig weg"}
 ];
 
 function newTask(){
