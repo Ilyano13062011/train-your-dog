@@ -2,60 +2,147 @@
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
-<title>Gevorderd Training</title>
+<title>Beginner Training</title>
 
 <style>
 body {
-    font-family: Arial;
-    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
     background: #fff6eb;
+    margin: 0;
+    text-align: center;
+}
+
+header {
+    background: linear-gradient(135deg, #4CAF50, #81c784);
+    color: white;
+    padding: 30px;
+    font-size: 28px;
+}
+
+.container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
 }
 
 .box {
     background: white;
-    margin: 40px auto;
     padding: 25px;
-    width: 320px;
     border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 button {
-    padding: 15px;
+    padding: 15px 20px;
     font-size: 18px;
-    background: #ff9800;
+    background: #4CAF50;
     color: white;
     border: none;
     border-radius: 12px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background: #388e3c;
+}
+
+/* PROGRESS BAR */
+.progress {
+    width: 100%;
+    background: #ddd;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    height: 20px;
+    background: #4CAF50;
+    width: 0%;
+    border-radius: 10px;
+}
+
+/* BACK */
+.back {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
 }
 </style>
 </head>
 
 <body>
 
-<h1>🐶 Gevorderd Training</h1>
+<header>🐶 Beginner Training</header>
+
+<div class="container">
 
 <div class="box">
-<h2>Wat ga je doen?</h2>
-<p>
-Meer uitdaging! Je hond leert combineren en beter luisteren.
-</p>
+<h2>🎯 Oefening</h2>
+<p id="challenge">Klik op start 👇</p>
 
-<p id="challenge">Klik hieronder om te starten 👇</p>
+<button onclick="nieuweChallenge()">Start training</button>
+<button onclick="addScore()">+1 Punt</button>
 
-<button onclick="nieuweChallenge()">Start oefening</button>
+<p id="tip"></p>
+</div>
+
+<div class="box">
+<h2>🏆 Score: <span id="score">0</span></h2>
+
+<div class="progress">
+<div class="progress-bar" id="progressBar"></div>
+</div>
+</div>
+
+<a href="levels.html" class="back">⬅ Terug</a>
+
 </div>
 
 <script>
+
+let score = localStorage.getItem("scoreBeginner") || 0;
+document.getElementById("score").innerText = score;
+
 const oefeningen = [
-"Slalom door je benen 🚶‍♀️",
-"5x zit en lig 🔁",
-"Focus 5 seconden 🎯"
+{
+tekst: "Laat je hond zitten 🐶",
+tip: "Beweeg een snoepje boven zijn hoofd"
+},
+{
+tekst: "Geef pootje 🤝",
+tip: "Tik zacht tegen de poot"
+},
+{
+tekst: "Laat je hond liggen 💤",
+tip: "Lok naar beneden"
+}
 ];
 
 function nieuweChallenge() {
 let random = Math.floor(Math.random() * oefeningen.length);
-document.getElementById("challenge").innerText = oefeningen[random];
+
+document.getElementById("challenge").innerText = oefeningen[random].tekst;
+document.getElementById("tip").innerText = "💡 " + oefeningen[random].tip;
 }
+
+function addScore() {
+score++;
+localStorage.setItem("scoreBeginner", score);
+document.getElementById("score").innerText = score;
+updateProgress();
+}
+
+function updateProgress() {
+let progress = Math.min(score * 10, 100);
+document.getElementById("progressBar").style.width = progress + "%";
+}
+
+updateProgress();
+
 </script>
 
 </body>
