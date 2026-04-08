@@ -6,84 +6,28 @@
 <title>Beginner Training</title>
 
 <style>
-body {
-    font-family:'Segoe UI';
-    background:#f9f6f2;
-    margin:0;
-}
+body { font-family:'Segoe UI'; background:#f9f6f2; margin:0; }
 
-/* HEADER */
-header {
-    background:#4CAF50;
-    color:white;
-    padding:25px;
-    text-align:center;
-    font-size:24px;
-}
+header { background:#4CAF50; color:white; padding:25px; text-align:center; }
 
-/* LAYOUT */
-.wrapper {
-    display:flex;
-    max-width:1200px;
-    margin:auto;
-    padding:20px;
-    gap:20px;
-}
+.wrapper { display:flex; max-width:1200px; margin:auto; padding:20px; gap:20px; }
 
-/* LINKS */
-.sidebar-left {
-    width:200px;
-}
+.sidebar-left { width:200px; }
+.sidebar-left img { width:100%; border-radius:10px; }
 
-.sidebar-left img {
-    width:100%;
-    border-radius:10px;
-}
+.main { flex:1; }
 
-/* MIDDEN */
-.main {
-    flex:1;
-}
+.section { background:white; padding:20px; border-radius:15px; margin-bottom:20px; }
 
-.section {
-    background:white;
-    padding:20px;
-    border-radius:15px;
-    margin-bottom:20px;
-}
+.sidebar-right { width:200px; }
 
-/* RECHTS */
-.sidebar-right {
-    width:200px;
-}
+.box { background:white; padding:15px; border-radius:10px; margin-bottom:10px; }
 
-.box {
-    background:white;
-    padding:15px;
-    border-radius:10px;
-}
+button { padding:12px; background:#4CAF50; color:white; border:none; border-radius:8px; cursor:pointer; }
 
-/* BUTTON */
-button {
-    padding:12px;
-    background:#4CAF50;
-    color:white;
-    border:none;
-    border-radius:8px;
-    margin-top:10px;
-    cursor:pointer;
-}
-
-/* MOBILE */
 @media (max-width:800px){
-.wrapper {
-    flex-direction:column;
-}
-
-.sidebar-left,
-.sidebar-right {
-    width:100%;
-}
+.wrapper { flex-direction:column; }
+.sidebar-left, .sidebar-right { width:100%; }
 }
 </style>
 </head>
@@ -94,12 +38,10 @@ button {
 
 <div class="wrapper">
 
-<!-- LINKS -->
 <div class="sidebar-left">
-<img src="https://placedog.net/200/200" alt="Logo">
+<img src="https://placedog.net/200/200">
 </div>
 
-<!-- MIDDEN -->
 <div class="main">
 
 <div class="section">
@@ -115,27 +57,19 @@ button {
 
 </div>
 
-<!-- RECHTS -->
 <div class="sidebar-right">
-<div class="box">
-<h3>💡 Extra tip</h3>
-<p>Train kort (5-10 min) en eindig positief.</p>
-</div>
-
-<div class="box" style="margin-top:10px;">
-<h3>🐾 Tip van de dag</h3>
-<p>Gebruik beloningen op het juiste moment.</p>
-</div>
+<div class="box"><h3>💡 Tip</h3><p>Kort trainen werkt beter.</p></div>
+<div class="box"><h3>🐾 Info</h3><p>Beloon goed gedrag meteen.</p></div>
 </div>
 
 </div>
 
 <script>
 const oefeningen = [
-{tekst:"Zitten",tip:"Gebruik snoepje boven hoofd"},
+{tekst:"Zitten",tip:"Gebruik snoepje"},
 {tekst:"Liggen",tip:"Beweeg naar beneden"},
-{tekst:"Pootje geven",tip:"Tik zacht tegen poot"},
-{tekst:"Hier komen",tip:"Roep vrolijk"}
+{tekst:"Pootje",tip:"Tik zacht"},
+{tekst:"Hier",tip:"Roep vrolijk"}
 ];
 
 function nieuweChallenge(){
