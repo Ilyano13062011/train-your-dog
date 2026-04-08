@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Beginner Training</title>
+
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+    background: #fff6eb;
+}
+
+button {
+    padding: 15px;
+    font-size: 18px;
+    background: orange;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🐶 Beginner Training</h1>
+
+<p id="challenge">Klik om te starten</p>
+
+<button onclick="nieuweChallenge()">Nieuwe oefening</button>
+
+<script>
+const oefeningen = [
+"Laat je hond zitten 🐶",
+"Geef pootje 🤝",
+"Laat je hond liggen 💤"
+];
+
+function nieuweChallenge() {
+let random = Math.floor(Math.random() * oefeningen.length);
+document.getElementById("challenge").innerText = oefeningen[random];
+}
+</script>
+
+</body>
+</html>
