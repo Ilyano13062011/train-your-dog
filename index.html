@@ -2,38 +2,70 @@
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Train Your Dog 🐶</title>
 
 <style>
 body {
-    font-family: Arial;
-    text-align: center;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
     background: #fff6eb;
 }
 
+/* HEADER */
 header {
-    background: orange;
+    background: linear-gradient(135deg, #ff8a00, #ffb347);
     color: white;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* INTRO */
+.intro {
+    background: white;
     padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.intro h1 {
     font-size: 32px;
 }
 
-button {
-    padding: 20px 30px;
+/* BUTTON */
+.start-btn {
+    padding: 18px 30px;
     font-size: 20px;
-    background: orange;
+    background: #ff8a00;
     color: white;
     border: none;
     border-radius: 15px;
     cursor: pointer;
+    margin-top: 20px;
 }
 
-button:hover {
+.start-btn:hover {
     background: #e67600;
 }
 
-.container {
-    margin-top: 80px;
+/* FOOTER */
+footer {
+    background: #ff8a00;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
 }
 </style>
 </head>
@@ -43,13 +75,24 @@ button:hover {
 <header>🐶 Train Your Dog</header>
 
 <div class="container">
-<h1>Maak trainen leuk!</h1>
-<p>Klaar om te starten?</p>
+
+<div class="intro">
+<h1>Train, speel en leer samen!</h1>
+<p>
+Ontdek leuke oefeningen, verbeter jullie samenwerking en maak van trainen een spel 🎉
+</p>
 
 <a href="levels.html">
-<button>🚀 Start de training</button>
+<button class="start-btn">🚀 Start de training</button>
 </a>
+
 </div>
+
+</div>
+
+<footer>
+❤️ Veel plezier met trainen!
+</footer>
 
 </body>
 </html>
