@@ -11,13 +11,28 @@ body {
     background: #fff6eb;
 }
 
+/* BOX */
+.box {
+    background: white;
+    margin: 40px auto;
+    padding: 25px;
+    width: 320px;
+    border-radius: 20px;
+}
+
+/* BUTTON */
 button {
     padding: 15px;
     font-size: 18px;
-    background: orange;
+    background: #4CAF50;
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3e8e41;
 }
 </style>
 </head>
@@ -26,9 +41,17 @@ button {
 
 <h1>🐶 Beginner Training</h1>
 
-<p id="challenge">Klik om te starten</p>
+<div class="box">
+<h2>Wat ga je doen?</h2>
+<p>
+Je gaat eenvoudige oefeningen doen zoals zitten, liggen en pootje geven.
+Perfect om te starten met je hond!
+</p>
 
-<button onclick="nieuweChallenge()">Nieuwe oefening</button>
+<p id="challenge">Klik hieronder om te beginnen 👇</p>
+
+<button onclick="nieuweChallenge()">Start oefening</button>
+</div>
 
 <script>
 const oefeningen = [
