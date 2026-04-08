@@ -1,233 +1,228 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Train Your Dog 🐶</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff6eb;
-      color: #333;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Train Your Dog 🐶</title>
 
-    header {
-      background: linear-gradient(135deg, #ff8a00, #ffb347);
-      color: white;
-      padding: 28px 20px;
-      font-size: 32px;
-      font-weight: bold;
-    }
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #fff6eb;
+}
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 25px 18px 40px;
-    }
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #ff8a00, #ffb347);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 36px;
+    font-weight: bold;
+}
 
-    .intro {
-      background: white;
-      border-radius: 20px;
-      padding: 24px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      margin-bottom: 25px;
-    }
+/* CONTAINER */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
 
-    .intro h1 {
-      margin-top: 0;
-      font-size: 34px;
-    }
+/* INTRO */
+.intro {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
 
-    .intro p {
-      font-size: 18px;
-      line-height: 1.6;
-      margin-bottom: 0;
-    }
+.intro h1 {
+    margin: 0;
+    font-size: 32px;
+}
 
-    .challenge-box {
-      background: white;
-      border-radius: 20px;
-      padding: 24px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      max-width: 420px;
-      margin: 0 auto 25px;
-    }
+/* CHALLENGE */
+.challenge {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
 
-    .challenge-box h2 {
-      margin-top: 0;
-    }
+/* LEVEL BUTTONS */
+.levels {
+    margin: 10px;
+}
 
-    #challenge {
-      font-size: 22px;
-      font-weight: bold;
-      min-height: 34px;
-    }
+.levels button {
+    margin: 5px;
+    padding: 8px 14px;
+    font-size: 14px;
+}
 
-    button {
-      background: #ff8a00;
-      color: white;
-      border: none;
-      padding: 14px 22px;
-      border-radius: 14px;
-      font-size: 16px;
-      cursor: pointer;
-    }
+/* BUTTON */
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    background: #ff8a00;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
 
-    button:hover {
-      background: #e97900;
-    }
+button:hover {
+    background: #e67600;
+}
 
-    .score {
-      background: white;
-      border-radius: 16px;
-      padding: 14px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      max-width: 260px;
-      margin: 0 auto 30px;
-      font-size: 20px;
-      font-weight: bold;
-    }
+/* SCORE */
+.score {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
 
-    .section-title {
-      font-size: 28px;
-      margin: 10px 0 20px;
-    }
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 20px;
-    }
+.card {
+    text-decoration: none;
+    color: black;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
 
-    .card {
-      display: block;
-      text-decoration: none;
-      color: #333;
-      background: white;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
+.card:hover {
+    transform: scale(1.05);
+}
 
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 22px rgba(0,0,0,0.12);
-    }
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
 
-    .card img {
-      width: 100%;
-      height: 190px;
-      object-fit: cover;
-      display: block;
-    }
+.card h3 {
+    margin: 10px;
+}
 
-    .card-content {
-      padding: 16px;
-    }
-
-    .card-content h3 {
-      margin: 0 0 8px;
-      font-size: 22px;
-    }
-
-    .card-content p {
-      margin: 0;
-      line-height: 1.5;
-    }
-
-    footer {
-      background: #ff8a00;
-      color: white;
-      padding: 18px;
-      margin-top: 35px;
-      font-size: 17px;
-    }
-  </style>
+/* FOOTER */
+footer {
+    background: #ff8a00;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+</style>
 </head>
+
 <body>
 
-  <header>🐶 Train Your Dog</header>
+<header>
+🐶 Train Your Dog
+</header>
 
-  <div class="container">
-    <div class="intro">
-      <h1>Train, speel en leer samen!</h1>
-      <p>
-        Welkom op Train Your Dog. Klik op een oefening hieronder en ontdek stap voor stap
-        hoe je die kan aanleren, met handige tips om het leuk en duidelijk te houden voor je hond.
-      </p>
-    </div>
+<div class="container">
 
-    <div class="challenge-box">
-      <h2>🎯 Challenge van de dag</h2>
-      <p id="challenge">Klik op de knop!</p>
-      <button onclick="nieuweChallenge()">Nieuwe challenge</button>
-    </div>
+<div class="intro">
+<h1>Train, speel en leer samen!</h1>
+<p>Klik op een oefening en ontdek tips en uitleg 👇</p>
+</div>
 
-    <div class="score">
-      🏆 Score: <span id="score">0</span>
-    </div>
+<div class="challenge">
+<h2>🎯 Challenge van de dag</h2>
 
-    <h2 class="section-title">Kies een oefening</h2>
+<div class="levels">
+<button onclick="setLevel('beginner')">Beginner</button>
+<button onclick="setLevel('gevorderd')">Gevorderd</button>
+<button onclick="setLevel('expert')">Expert</button>
+</div>
 
-    <div class="gallery">
-      <a href="balans.html" class="card">
-        <img src="https://placedog.net/500/350?id=1" alt="Balans oefening hond">
-        <div class="card-content">
-          <h3>🐾 Balans</h3>
-          <p>Klik voor veel uitleg, stapjes en tips om balans rustig op te bouwen.</p>
-        </div>
-      </a>
+<p id="challenge">Klik op de knop!</p>
+<button onclick="nieuweChallenge()">Nieuwe challenge</button>
+</div>
 
-      <a href="focus.html" class="card">
-        <img src="https://placedog.net/500/350?id=2" alt="Focus oefening hond">
-        <div class="card-content">
-          <h3>🎯 Focus</h3>
-          <p>Leer hoe je je hond helpt om aandacht voor jou te krijgen op een leuke manier.</p>
-        </div>
-      </a>
+<div class="score">
+🏆 Score: <span id="score">0</span>
+</div>
 
-      <a href="draaien.html" class="card">
-        <img src="https://placedog.net/500/350?id=3" alt="Draaien truc hond">
-        <div class="card-content">
-          <h3>🌀 Draaien</h3>
-          <p>Ontdek hoe je de draai-truc stap voor stap kan oefenen met beloningen.</p>
-        </div>
-      </a>
+<div class="gallery">
 
-      <a href="pootje.html" class="card">
-        <img src="https://placedog.net/500/350?id=4" alt="Pootje geven hond">
-        <div class="card-content">
-          <h3>🤝 Pootje</h3>
-          <p>Klik voor uitleg en tips om pootje geven rustig en duidelijk aan te leren.</p>
-        </div>
-      </a>
-    </div>
-  </div>
+<a href="balans.html" class="card">
+<img src="https://placedog.net/400/300?id=1">
+<h3>🐾 Balans</h3>
+</a>
 
-  <footer>❤️ Veel plezier met trainen!</footer>
+<a href="focus.html" class="card">
+<img src="https://placedog.net/400/300?id=2">
+<h3>🎯 Focus</h3>
+</a>
 
-  <script>
-    let score = 0;
+<a href="draaien.html" class="card">
+<img src="https://placedog.net/400/300?id=3">
+<h3>🌀 Draaien</h3>
+</a>
 
-    const challenges = [
-      "Oefen vandaag 3 keer zit 🐶",
-      "Doe vandaag 5 seconden focus 🎯",
-      "Oefen 2 rustige rondjes draaien 🌀",
-      "Vraag 3 keer pootje 🤝",
-      "Laat je hond 5 seconden wachten ⏳",
-      "Beloon vandaag extra kalm gedrag 🌟"
-    ];
+<a href="pootje.html" class="card">
+<img src="https://placedog.net/400/300?id=4">
+<h3>🤝 Pootje</h3>
+</a>
 
-    function nieuweChallenge() {
-      const random = Math.floor(Math.random() * challenges.length);
-      document.getElementById("challenge").innerText = challenges[random];
-      score++;
-      document.getElementById("score").innerText = score;
-    }
-  </script>
+</div>
+
+</div>
+
+<footer>
+❤️ Veel plezier met trainen!
+</footer>
+
+<script>
+let score = 0;
+let level = "beginner";
+
+function setLevel(lvl) {
+    level = lvl;
+    document.getElementById("challenge").innerText = "Klik voor een challenge!";
+}
+
+const challenges = {
+    beginner: [
+        "Laat je hond zitten 🐶",
+        "Geef 2 pootjes 🤝",
+        "Laat je hond liggen 💤"
+    ],
+    gevorderd: [
+        "5x zit en lig 🔁",
+        "Slalom door je benen 🚶‍♀️",
+        "Focus 5 seconden 🎯"
+    ],
+    expert: [
+        "10 sec balans 🐾",
+        "Draai 3 rondjes 🌀",
+        "Loop achteruit 🔄"
+    ]
+};
+
+function nieuweChallenge() {
+    let lijst = challenges[level];
+    let random = Math.floor(Math.random() * lijst.length);
+    document.getElementById("challenge").innerText = lijst[random];
+
+    score++;
+    document.getElementById("score").innerText = score;
+}
+</script>
 
 </body>
 </html>
