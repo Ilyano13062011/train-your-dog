@@ -40,6 +40,11 @@ button {
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    margin: 5px;
+}
+
+.video-btn {
+    background: #2196F3;
 }
 
 .back {
@@ -57,10 +62,7 @@ button {
 
 <div class="section">
 <h2>Doel van deze training</h2>
-<p>
-Dit niveau focust op precisie, controle en moeilijkere oefeningen.
-Ideaal voor gevorderde honden en ervaren handlers.
-</p>
+<p>Precisie, controle en moeilijke oefeningen.</p>
 </div>
 
 <div class="section">
@@ -68,58 +70,56 @@ Ideaal voor gevorderde honden en ervaren handlers.
 <p id="challenge">Klik hieronder om een oefening te krijgen.</p>
 
 <button onclick="nieuweChallenge()">Nieuwe oefening</button>
+<button class="video-btn" onclick="openVideo()">🎥 Bekijk uitleg</button>
 </div>
 
 <div class="section">
 <h2>Tip</h2>
-<p id="tip">Tips verschijnen hier.</p>
+<p id="tip"></p>
 </div>
 
-<a href="levels.html" class="back">⬅ Terug naar niveaus</a>
+<a href="levels.html" class="back">⬅ Terug</a>
 
 </div>
 
 <script>
+let currentVideo = "";
+
 const oefeningen = [
 {
-tekst: "Balans houden 10 seconden",
-tip: "Werk langzaam en gecontroleerd"
+tekst:"Balans houden",
+tip:"Werk langzaam en gecontroleerd",
+video:"https://www.youtube.com/watch?v=9h3Y7X8kL2w"
 },
 {
-tekst: "3 rondjes draaien",
-tip: "Gebruik duidelijke signalen"
+tekst:"3 rondjes draaien",
+tip:"Gebruik duidelijke signalen",
+video:"https://www.youtube.com/watch?v=Y3p2x8b7k9w"
 },
 {
-tekst: "Achteruit lopen",
-tip: "Lok rustig en beloon kleine stappen"
+tekst:"Achteruit lopen",
+tip:"Lok kleine stappen",
+video:"https://www.youtube.com/watch?v=4k5h6g7j8k9"
 },
 {
-tekst: "Combinatie oefeningen",
-tip: "Werk stap voor stap en blijf rustig"
-},
-{
-tekst: "Focus met afleiding",
-tip: "Begin met lichte afleiding en bouw op"
-},
-{
-tekst: "Blijf 10 seconden",
-tip: "Verleng de tijd geleidelijk"
-},
-{
-tekst: "Snelle recall",
-tip: "Roep enthousiast en beloon sterk"
-},
-{
-tekst: "Precision volgen",
-tip: "Let op positie naast je been"
+tekst:"Focus met afleiding",
+tip:"Begin licht en bouw op",
+video:"https://www.youtube.com/watch?v=3j4h5k6l7m8"
 }
 ];
 
-function nieuweChallenge() {
-let r = Math.floor(Math.random() * oefeningen.length);
+function nieuweChallenge(){
+let r=Math.floor(Math.random()*oefeningen.length);
 
-document.getElementById("challenge").innerText = oefeningen[r].tekst;
-document.getElementById("tip").innerText = oefeningen[r].tip;
+document.getElementById("challenge").innerText=oefeningen[r].tekst;
+document.getElementById("tip").innerText=oefeningen[r].tip;
+currentVideo = oefeningen[r].video;
+}
+
+function openVideo(){
+if(currentVideo){
+window.open(currentVideo, "_blank");
+}
 }
 </script>
 
