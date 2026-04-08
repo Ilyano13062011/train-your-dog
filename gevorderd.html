@@ -2,7 +2,7 @@
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
-<title>Gevorderd Training</title>
+<title>Beginner Training</title>
 
 <style>
 body {
@@ -12,7 +12,7 @@ body {
 }
 
 header {
-    background: #ff9800;
+    background: #4CAF50;
     color: white;
     padding: 30px;
     text-align: center;
@@ -35,32 +35,34 @@ header {
 button {
     padding: 12px 18px;
     font-size: 16px;
-    background: #ff9800;
+    background: #4CAF50;
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    margin: 5px;
+}
+
+.video-btn {
+    background: #2196F3;
 }
 
 .back {
     text-decoration: none;
-    color: #ff9800;
+    color: #4CAF50;
 }
 </style>
 </head>
 
 <body>
 
-<header>Gevorderd Training</header>
+<header>Beginner Training</header>
 
 <div class="container">
 
 <div class="section">
 <h2>Doel van deze training</h2>
-<p>
-Hier werk je aan controle, samenwerking en complexere bewegingen.
-Je hond leert beter luisteren en reageren.
-</p>
+<p>Basis oefeningen voor rust en samenwerking.</p>
 </div>
 
 <div class="section">
@@ -68,58 +70,56 @@ Je hond leert beter luisteren en reageren.
 <p id="challenge">Klik hieronder om een oefening te krijgen.</p>
 
 <button onclick="nieuweChallenge()">Nieuwe oefening</button>
+<button class="video-btn" onclick="openVideo()">🎥 Bekijk uitleg</button>
 </div>
 
 <div class="section">
 <h2>Tip</h2>
-<p id="tip">Tips verschijnen hier.</p>
+<p id="tip"></p>
 </div>
 
-<a href="levels.html" class="back">⬅ Terug naar niveaus</a>
+<a href="levels.html" class="back">⬅ Terug</a>
 
 </div>
 
 <script>
+let currentVideo = "";
+
 const oefeningen = [
 {
-tekst: "Slalom door je benen",
-tip: "Werk rustig en begeleid je hond met je hand"
+tekst:"Zitten",
+tip:"Wacht tot je hond zelf zit en beloon",
+video:"https://www.youtube.com/watch?v=Qm9v1m3yX5g"
 },
 {
-tekst: "Zit en lig afwisselen",
-tip: "Beloon na elke juiste uitvoering"
+tekst:"Liggen",
+tip:"Beweeg snoepje naar beneden",
+video:"https://www.youtube.com/watch?v=8n1rH5p9YJ0"
 },
 {
-tekst: "Focus houden 5 seconden",
-tip: "Beloon oogcontact meteen"
+tekst:"Pootje geven",
+tip:"Tik zacht tegen de poot",
+video:"https://www.youtube.com/watch?v=YJv1m2s9QWk"
 },
 {
-tekst: "Volgen naast je",
-tip: "Beloon positie naast je been"
-},
-{
-tekst: "Rondje draaien",
-tip: "Gebruik duidelijke handbeweging"
-},
-{
-tekst: "Zoek oefening",
-tip: "Verstop een snoepje en laat je hond zoeken"
-},
-{
-tekst: "Blijf 5 seconden",
-tip: "Stap rustig weg en kom terug"
-},
-{
-tekst: "Tussen je benen lopen",
-tip: "Werk stap voor stap en beloon veel"
+tekst:"Komen (hier)",
+tip:"Roep vrolijk en beloon",
+video:"https://www.youtube.com/watch?v=6b3v3Y4d5Kk"
 }
 ];
 
-function nieuweChallenge() {
-let r = Math.floor(Math.random() * oefeningen.length);
+function nieuweChallenge(){
+let r=Math.floor(Math.random()*oefeningen.length);
 
-document.getElementById("challenge").innerText = oefeningen[r].tekst;
-document.getElementById("tip").innerText = oefeningen[r].tip;
+document.getElementById("challenge").innerText=oefeningen[r].tekst;
+document.getElementById("tip").innerText=oefeningen[r].tip;
+currentVideo = oefeningen[r].video;
+}
+
+function openVideo(){
+if(currentVideo){
+window.open(currentVideo, "_blank");
+}
 }
 </script>
 
