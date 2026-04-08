@@ -2,6 +2,7 @@
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Expert Training</title>
 
 <style>
@@ -23,7 +24,13 @@ margin:5px;
 cursor:pointer;
 }
 
-.video-btn { background:#2196F3; }
+.back { text-decoration:none; color:#f44336; }
+
+/* MOBILE */
+@media (max-width:600px){
+.section { padding:15px; }
+button { width:100%; }
+}
 </style>
 </head>
 
@@ -38,7 +45,6 @@ cursor:pointer;
 <p id="challenge">Klik op start</p>
 
 <button onclick="nieuweChallenge()">Nieuwe oefening</button>
-<button class="video-btn" onclick="openVideo()">🎥 Video</button>
 </div>
 
 <div class="section">
@@ -46,48 +52,23 @@ cursor:pointer;
 <p id="tip"></p>
 </div>
 
+<a href="levels.html" class="back">⬅ Terug</a>
+
 </div>
 
 <script>
-let currentVideo = "";
-
 const oefeningen = [
-{
-tekst:"Balans houden",
-tip:"Werk langzaam en gecontroleerd",
-video:"https://www.youtube.com/watch?v=9h3Y7X8kL2w"
-},
-{
-tekst:"3 rondjes draaien",
-tip:"Gebruik duidelijke signalen",
-video:"https://www.youtube.com/watch?v=Y3p2x8b7k9w"
-},
-{
-tekst:"Achteruit lopen",
-tip:"Lok kleine stappen",
-video:"https://www.youtube.com/watch?v=4k5h6g7j8k9"
-},
-{
-tekst:"Focus met afleiding",
-tip:"Begin licht en bouw op",
-video:"https://www.youtube.com/watch?v=3j4h5k6l7m8"
-}
+{tekst:"Balans houden",tip:"Werk langzaam"},
+{tekst:"3 rondjes",tip:"Gebruik duidelijke signalen"},
+{tekst:"Achteruit lopen",tip:"Lok kleine stappen"},
+{tekst:"Focus met afleiding",tip:"Begin licht"},
+{tekst:"Blijf 10 sec",tip:"Verleng langzaam"}
 ];
 
 function nieuweChallenge(){
 let r=Math.floor(Math.random()*oefeningen.length);
-
 document.getElementById("challenge").innerText=oefeningen[r].tekst;
 document.getElementById("tip").innerText=oefeningen[r].tip;
-currentVideo = oefeningen[r].video;
-}
-
-function openVideo(){
-if(currentVideo){
-window.open(currentVideo, "_blank");
-} else {
-alert("Klik eerst op een oefening");
-}
 }
 </script>
 
