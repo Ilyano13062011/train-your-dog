@@ -5,96 +5,101 @@
 <title>Gevorderd Training</title>
 
 <style>
-body { font-family: 'Segoe UI'; background:#fff6eb; margin:0; text-align:center; }
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f9f6f2;
+    margin: 0;
+}
 
-header { background:linear-gradient(135deg,#ff9800,#ffb74d); color:white; padding:30px; font-size:28px; }
+header {
+    background: #ff9800;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    font-size: 28px;
+}
 
-.container { max-width:500px; margin:auto; padding:20px; }
+.container {
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+}
 
-.box {
-background:white;
-padding:25px;
-border-radius:20px;
-margin-top:20px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+.section {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
 }
 
 button {
-padding:15px;
-font-size:18px;
-background:#ff9800;
-color:white;
-border:none;
-border-radius:12px;
-margin:5px;
+    padding: 12px 18px;
+    font-size: 16px;
+    background: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 8px;
 }
 
-.progress { width:100%; background:#ddd; border-radius:10px; margin-top:10px; }
-.progress-bar { height:20px; background:#ff9800; width:0%; border-radius:10px; }
-
-.back { margin-top:20px; display:inline-block; color:#ff9800; }
+.back {
+    text-decoration: none;
+    color: #ff9800;
+}
 </style>
 </head>
 
 <body>
 
-<header>🐶 Gevorderd Training</header>
+<header>Gevorderd Training</header>
 
 <div class="container">
 
-<div class="box">
-<h2>🎯 Oefening</h2>
-<p id="challenge">Klik op start 👇</p>
-
-<button onclick="nieuweChallenge()">Start</button>
-<button onclick="addScore()">+1</button>
-
-<p id="tip"></p>
+<div class="section">
+<h2>Doel van deze training</h2>
+<p>
+Hier werk je aan controle, samenwerking en complexere bewegingen.
+Je hond leert beter luisteren en reageren.
+</p>
 </div>
 
-<div class="box">
-<h2>🏆 Score: <span id="score">0</span></h2>
+<div class="section">
+<h2>Oefening</h2>
+<p id="challenge">Klik hieronder om een oefening te krijgen.</p>
 
-<div class="progress">
-<div class="progress-bar" id="bar"></div>
-</div>
+<button onclick="nieuweChallenge()">Nieuwe oefening</button>
 </div>
 
-<a href="levels.html" class="back">⬅ Terug</a>
+<div class="section">
+<h2>Tip</h2>
+<p id="tip">Tips verschijnen hier.</p>
+</div>
+
+<a href="levels.html" class="back">⬅ Terug naar niveaus</a>
 
 </div>
 
 <script>
-
-let score = localStorage.getItem("scoreGevorderd") || 0;
-document.getElementById("score").innerText = score;
-
 const oefeningen = [
-{tekst:"Slalom 🚶‍♀️",tip:"Leid rustig met snoepje"},
-{tekst:"5x zit/lig 🔁",tip:"Werk rustig en duidelijk"},
-{tekst:"Focus 🎯",tip:"Beloon oogcontact"}
+{
+tekst: "Slalom door je benen",
+tip: "Werk rustig en begeleid je hond met je hand"
+},
+{
+tekst: "Zit en lig afwisselen",
+tip: "Beloon na elke juiste uitvoering"
+},
+{
+tekst: "Focus houden 5 seconden",
+tip: "Beloon oogcontact meteen"
+}
 ];
 
-function nieuweChallenge(){
-let r=Math.floor(Math.random()*oefeningen.length);
-document.getElementById("challenge").innerText=oefeningen[r].tekst;
-document.getElementById("tip").innerText="💡 "+oefeningen[r].tip;
+function nieuweChallenge() {
+let r = Math.floor(Math.random() * oefeningen.length);
+
+document.getElementById("challenge").innerText = oefeningen[r].tekst;
+document.getElementById("tip").innerText = oefeningen[r].tip;
 }
-
-function addScore(){
-score++;
-localStorage.setItem("scoreGevorderd",score);
-document.getElementById("score").innerText=score;
-update();
-}
-
-function update(){
-let p=Math.min(score*10,100);
-document.getElementById("bar").style.width=p+"%";
-}
-
-update();
-
 </script>
 
 </body>
