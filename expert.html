@@ -1,5 +1,70 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Beginner Training</title>
+
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+    background: #fff6eb;
+}
+
+/* BOX */
+.box {
+    background: white;
+    margin: 40px auto;
+    padding: 25px;
+    width: 320px;
+    border-radius: 20px;
+}
+
+/* BUTTON */
+button {
+    padding: 15px;
+    font-size: 18px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3e8e41;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🐶 Beginner Training</h1>
+
+<div class="box">
+<h2>Wat ga je doen?</h2>
+<p>
+Je gaat eenvoudige oefeningen doen zoals zitten, liggen en pootje geven.
+Perfect om te starten met je hond!
+</p>
+
+<p id="challenge">Klik hieronder om te beginnen 👇</p>
+
+<button onclick="nieuweChallenge()">Start oefening</button>
+</div>
+
+<script>
 const oefeningen = [
-"10 sec balans 🐾",
-"Draai 3 rondjes 🌀",
-"Loop achteruit 🔄"
+"Laat je hond zitten 🐶",
+"Geef pootje 🤝",
+"Laat je hond liggen 💤"
 ];
+
+function nieuweChallenge() {
+let random = Math.floor(Math.random() * oefeningen.length);
+document.getElementById("challenge").innerText = oefeningen[random];
+}
+</script>
+
+</body>
+</html>
