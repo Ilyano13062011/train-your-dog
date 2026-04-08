@@ -1,165 +1,246 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Train Your Dog 🐶</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Train Your Dog</title>
 
-<style>
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #f9f6f2;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-/* HEADER */
-header {
-    background: linear-gradient(135deg, #ff8a00, #ffb347);
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
-}
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f9f6f2;
+      color: #333;
+    }
 
-/* CONTAINER */
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-}
+    header {
+      background: linear-gradient(135deg, #ff8a00, #ffb347);
+      color: white;
+      text-align: center;
+      padding: 48px 20px 56px;
+    }
 
-/* INTRO */
-.intro {
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    margin-top: -30px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
 
-.intro h1 {
-    font-size: 32px;
-}
+    header p {
+      margin: 12px auto 0;
+      max-width: 700px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
 
-/* FEATURES */
-.features {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
-}
+    .container {
+      max-width: 1100px;
+      margin: -24px auto 0;
+      padding: 0 16px 40px;
+    }
 
-.feature {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    width: 250px;
-}
+    .hero-box {
+      background: white;
+      border-radius: 22px;
+      padding: 28px 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      text-align: center;
+    }
 
-/* BUTTON */
-.start-btn {
-    margin-top: 30px;
-    padding: 18px 30px;
-    font-size: 20px;
-    background: #ff8a00;
-    color: white;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-}
+    .hero-box h2 {
+      margin-top: 0;
+      font-size: 1.8rem;
+      color: #222;
+    }
 
-.start-btn:hover {
-    background: #e67600;
-}
+    .hero-box p {
+      max-width: 760px;
+      margin: 0 auto;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
 
-/* FOOTER */
-footer {
-    background: #ff8a00;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-}
+    .start-btn {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 16px 28px;
+      background: #ff8a00;
+      color: white;
+      text-decoration: none;
+      border-radius: 14px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
 
-/* 🔥 MOBILE FIX */
-@media (max-width: 600px) {
+    .start-btn:hover {
+      background: #e67800;
+      transform: translateY(-1px);
+    }
 
-header {
-    font-size: 24px;
-    padding: 30px 10px;
-}
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 28px;
+    }
 
-.intro {
-    margin-top: 0;
-    padding: 20px;
-}
+    .feature {
+      background: white;
+      border-radius: 18px;
+      padding: 22px 18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      text-align: center;
+    }
 
-.intro h1 {
-    font-size: 24px;
-}
+    .feature h3 {
+      margin-top: 0;
+      font-size: 1.15rem;
+    }
 
-.features {
-    flex-direction: column;
-    align-items: center;
-}
+    .feature p {
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
 
-.feature {
-    width: 90%;
-}
+    .extra {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 20px;
+    }
 
-.start-btn {
-    width: 90%;
-    font-size: 18px;
-}
-}
-</style>
+    .extra-box {
+      background: white;
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+
+    .extra-box h3 {
+      margin-top: 0;
+    }
+
+    .extra-box ul {
+      margin: 0;
+      padding-left: 20px;
+      line-height: 1.8;
+    }
+
+    footer {
+      margin-top: 34px;
+      background: #ff8a00;
+      color: white;
+      text-align: center;
+      padding: 18px;
+      font-size: 0.98rem;
+    }
+
+    @media (max-width: 900px) {
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .extra {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 36px 16px 46px;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero-box {
+        padding: 22px 16px;
+      }
+
+      .hero-box h2 {
+        font-size: 1.45rem;
+      }
+
+      .start-btn {
+        width: 100%;
+        max-width: 320px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
-<h1>🐶 Train Your Dog</h1>
-</header>
+  <header>
+    <h1>🐶 Train Your Dog</h1>
+    <p>
+      Een duidelijke en leuke trainingssite voor volwassenen die samen met hun hond willen oefenen.
+    </p>
+  </header>
 
-<div class="container">
+  <div class="container">
+    <div class="hero-box">
+      <h2>Train stap voor stap met je hond</h2>
+      <p>
+        Kies een niveau dat past bij jou en je hond. Je krijgt oefeningen met handige tips,
+        zodat je rustig en duidelijk kan trainen. Van basisvaardigheden tot moeilijkere uitdagingen:
+        alles is opgebouwd om jullie samenwerking te verbeteren.
+      </p>
 
-<div class="intro">
-<h1>Train je hond op een leuke en duidelijke manier</h1>
-<p>
-Leer stap voor stap hoe je jouw hond beter begrijpt en samenwerkt.
-Of je nu net begint of al verder bent — hier vind je de juiste oefeningen.
-</p>
+      <a href="levels.html" class="start-btn">🚀 Start de training</a>
+    </div>
 
-<a href="levels.html">
-<button class="start-btn">🚀 Start de training</button>
-</a>
-</div>
+    <div class="features">
+      <div class="feature">
+        <h3>🐾 Beginner</h3>
+        <p>
+          Werk aan de basis zoals zitten, liggen, aandacht en rust.
+        </p>
+      </div>
 
-<div class="features">
+      <div class="feature">
+        <h3>🎯 Gevorderd</h3>
+        <p>
+          Oefen meer controle, samenwerking en beweging.
+        </p>
+      </div>
 
-<div class="feature">
-<h3>🐾 Basis training</h3>
-<p>Leer de fundamenten zoals zitten, liggen en aandacht.</p>
-</div>
+      <div class="feature">
+        <h3>💪 Expert</h3>
+        <p>
+          Voor moeilijkere oefeningen met meer precisie en uitdaging.
+        </p>
+      </div>
+    </div>
 
-<div class="feature">
-<h3>🎯 Focus & controle</h3>
-<p>Verbeter de samenwerking en communicatie met je hond.</p>
-</div>
+    <div class="extra">
+      <div class="extra-box">
+        <h3>Waarom deze site?</h3>
+        <p>
+          Deze website helpt je om op een rustige en duidelijke manier met je hond te trainen.
+          Je kiest eerst een niveau, daarna krijg je telkens een oefening met een tip erbij.
+        </p>
+      </div>
 
-<div class="feature">
-<h3>💪 Uitdaging</h3>
-<p>Werk naar moeilijkere oefeningen en betere controle.</p>
-</div>
+      <div class="extra-box">
+        <h3>Handige tips</h3>
+        <ul>
+          <li>Train kort en duidelijk.</li>
+          <li>Beloon op het juiste moment.</li>
+          <li>Stop terwijl het nog leuk is.</li>
+          <li>Bouw moeilijkheid rustig op.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-</div>
-
-</div>
-
-<footer>
-❤️ Veel plezier met trainen!
-</footer>
+  <footer>
+    ❤️ Veel plezier met trainen!
+  </footer>
 
 </body>
 </html>
