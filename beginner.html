@@ -3,48 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beginner</title>
+<title>Beginner Training</title>
 
 <style>
 body {
-font-family:'Segoe UI';
-background:#f1f8f4;
 margin:0;
+font-family:'Segoe UI',sans-serif;
+background:#f1f8f4;
 }
 
+/* HEADER */
 header {
 background:#4CAF50;
 color:white;
+padding:30px;
 text-align:center;
-padding:25px;
-font-size:22px;
 }
 
+/* CONTAINER */
 .container {
-max-width:700px;
+max-width:800px;
 margin:auto;
 padding:20px;
 }
 
-/* BOX */
-.section {
+/* CARD */
+.card {
 background:white;
 padding:25px;
-border-radius:15px;
+border-radius:20px;
 margin-bottom:20px;
-border-left:6px solid #4CAF50;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* TITELS */
+h2 {
+margin-top:0;
 }
 
 /* BUTTON */
 button {
-padding:14px;
+width:100%;
+padding:15px;
+font-size:16px;
+border:none;
+border-radius:12px;
 background:#4CAF50;
 color:white;
-border:none;
-border-radius:10px;
-width:100%;
-font-size:16px;
 cursor:pointer;
 }
 
@@ -52,34 +57,37 @@ button:hover {
 background:#3e8e41;
 }
 
-/* EXTRA DECOR */
-.footer-tip {
-text-align:center;
+/* EXTRA */
+.tip-box {
 font-size:14px;
 color:#555;
-margin-top:20px;
+text-align:center;
+margin-top:15px;
 }
 </style>
 </head>
 
 <body>
 
-<header>🐶 Beginner Training</header>
+<header>
+<h1>🐶 Beginner Training</h1>
+<p>Start met de basis en bouw vertrouwen op</p>
+</header>
 
 <div class="container">
 
-<div class="section">
-<h2>Oefening</h2>
-<p id="challenge">Klik op start</p>
+<div class="card">
+<h2>🎯 Oefening</h2>
+<p id="challenge">Klik op start om te beginnen</p>
 <button onclick="newTask()">Nieuwe oefening</button>
 </div>
 
-<div class="section">
-<h2>Tip</h2>
+<div class="card">
+<h2>💡 Tip</h2>
 <p id="tip"></p>
 </div>
 
-<div class="footer-tip">
+<div class="tip-box">
 Train kort en maak het leuk voor je hond 🐾
 </div>
 
@@ -87,14 +95,14 @@ Train kort en maak het leuk voor je hond 🐾
 
 <script>
 const oefeningen=[
-{t:"Zitten",tip:"Gebruik snoepje"},
-{t:"Liggen",tip:"Beweeg naar beneden"},
-{t:"Pootje",tip:"Tik zacht"},
-{t:"Hier komen",tip:"Roep vrolijk"},
-{t:"Naam herkennen",tip:"Beloon reactie"},
-{t:"Oogcontact",tip:"Beloon kijken"},
+{t:"Zitten",tip:"Gebruik een snoepje boven het hoofd"},
+{t:"Liggen",tip:"Beweeg je hand rustig naar beneden"},
+{t:"Pootje geven",tip:"Tik zacht tegen de poot"},
+{t:"Hier komen",tip:"Roep vrolijk en beloon direct"},
+{t:"Naam herkennen",tip:"Zeg naam en beloon reactie"},
+{t:"Oogcontact",tip:"Beloon zodra hij naar je kijkt"},
 {t:"Rustig blijven",tip:"Beloon kalm gedrag"},
-{t:"Wachten",tip:"Begin kort"}
+{t:"Wachten",tip:"Begin met korte momenten"}
 ];
 
 function newTask(){
