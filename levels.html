@@ -3,28 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Niveaus</title>
+<title>Kies niveau</title>
 
 <style>
 body {
-font-family:'Segoe UI';
-background:linear-gradient(to bottom,#fff7ed,#f9f6f2);
 margin:0;
+font-family:'Segoe UI', sans-serif;
+background:#f9f6f2;
+}
+
+/* HEADER */
+.header {
+background:linear-gradient(135deg,#ff8a00,#ffb347);
+color:white;
+padding:40px 20px;
 text-align:center;
 }
 
-/* TITEL */
-h1 {
-margin-top:30px;
+.header h1 {
+margin:0;
+font-size:32px;
 }
 
 /* GRID */
 .cards {
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;
-padding:30px;
-max-width:1000px;
+padding:40px;
+max-width:1100px;
 margin:auto;
 }
 
@@ -34,53 +41,83 @@ border-radius:20px;
 overflow:hidden;
 text-decoration:none;
 color:white;
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
 transition:0.3s;
-display:block; /* 🔥 BELANGRIJK */
+display:block;
 }
 
 .card:hover {
-transform:translateY(-8px);
+transform:translateY(-10px);
 }
 
-/* FOTO */
+/* IMAGE */
 .card img {
 width:100%;
-height:200px;
+height:220px;
 object-fit:cover;
 }
 
-/* TEKST */
-.card h2 {
-margin:15px;
+/* CONTENT */
+.card-content {
+padding:20px;
 }
 
-/* KLEUREN */
+/* COLORS */
 .beginner { background:#4CAF50; }
 .gevorderd { background:#ff9800; }
 .expert { background:#f44336; }
+
+/* TEXT */
+.card h2 {
+margin:0;
+font-size:22px;
+}
+
+.card p {
+margin-top:10px;
+opacity:0.9;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+.cards {
+padding:20px;
+}
+}
 </style>
 </head>
 
 <body>
 
-<h1>Kies jouw niveau</h1>
+<div class="header">
+<h1>🐶 Kies jouw trainingsniveau</h1>
+<p>Begin waar jouw hond staat en bouw verder op</p>
+</div>
 
 <div class="cards">
 
 <a href="beginner.html" class="card beginner">
-<img src="https://images.unsplash.com/photo-1601758174114-e711c0cbaa69">
+<img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238">
+<div class="card-content">
 <h2>Beginner</h2>
+<p>Start met de basis en leer je hond begrijpen</p>
+</div>
 </a>
 
 <a href="gevorderd.html" class="card gevorderd">
 <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16">
+<div class="card-content">
 <h2>Gevorderd</h2>
+<p>Werk aan controle en samenwerking</p>
+</div>
 </a>
 
 <a href="expert.html" class="card expert">
 <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b">
+<div class="card-content">
 <h2>Expert</h2>
+<p>Voor uitdagende en precieze training</p>
+</div>
 </a>
 
 </div>
