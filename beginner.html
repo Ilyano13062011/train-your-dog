@@ -40,6 +40,11 @@ button {
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    margin: 5px;
+}
+
+.video-btn {
+    background: #2196F3;
 }
 
 .back {
@@ -57,10 +62,7 @@ button {
 
 <div class="section">
 <h2>Doel van deze training</h2>
-<p>
-In deze fase werk je aan de basis: rust, aandacht en eenvoudige oefeningen.
-Dit vormt de fundering voor verdere training.
-</p>
+<p>Basis oefeningen voor rust en samenwerking.</p>
 </div>
 
 <div class="section">
@@ -68,62 +70,56 @@ Dit vormt de fundering voor verdere training.
 <p id="challenge">Klik hieronder om een oefening te krijgen.</p>
 
 <button onclick="nieuweChallenge()">Nieuwe oefening</button>
+<button class="video-btn" onclick="openVideo()">🎥 Bekijk uitleg</button>
 </div>
 
 <div class="section">
 <h2>Tip</h2>
-<p id="tip">Tips verschijnen hier.</p>
+<p id="tip"></p>
 </div>
 
-<a href="levels.html" class="back">⬅ Terug naar niveaus</a>
+<a href="levels.html" class="back">⬅ Terug</a>
 
 </div>
 
 <script>
+let currentVideo = "";
+
 const oefeningen = [
 {
-tekst: "Laat je hond rustig zitten",
-tip: "Werk met beloning en wacht tot je hond zelf gaat zitten"
+tekst:"Zitten",
+tip:"Wacht tot je hond zelf zit en beloon",
+video:"https://www.youtube.com/watch?v=Qm9v1m3yX5g"
 },
 {
-tekst: "Laat je hond liggen",
-tip: "Beweeg je hand rustig naar beneden"
+tekst:"Liggen",
+tip:"Beweeg snoepje naar beneden",
+video:"https://www.youtube.com/watch?v=8n1rH5p9YJ0"
 },
 {
-tekst: "Oefen aandacht (focus)",
-tip: "Beloon wanneer je hond naar jou kijkt"
+tekst:"Pootje geven",
+tip:"Tik zacht tegen de poot",
+video:"https://www.youtube.com/watch?v=YJv1m2s9QWk"
 },
 {
-tekst: "Pootje geven",
-tip: "Tik zacht tegen de poot"
-},
-{
-tekst: "Naam herkennen",
-tip: "Zeg naam en beloon reactie"
-},
-{
-tekst: "Komen (hier)",
-tip: "Roep vrolijk en beloon"
-},
-{
-tekst: "Rustig blijven",
-tip: "Beloon kalm gedrag"
-},
-{
-tekst: "Oogcontact houden",
-tip: "Beloon zodra hij kijkt"
-},
-{
-tekst: "Wachten 3 seconden",
-tip: "Begin kort en bouw op"
+tekst:"Komen (hier)",
+tip:"Roep vrolijk en beloon",
+video:"https://www.youtube.com/watch?v=6b3v3Y4d5Kk"
 }
 ];
 
-function nieuweChallenge() {
-let r = Math.floor(Math.random() * oefeningen.length);
+function nieuweChallenge(){
+let r=Math.floor(Math.random()*oefeningen.length);
 
-document.getElementById("challenge").innerText = oefeningen[r].tekst;
-document.getElementById("tip").innerText = oefeningen[r].tip;
+document.getElementById("challenge").innerText=oefeningen[r].tekst;
+document.getElementById("tip").innerText=oefeningen[r].tip;
+currentVideo = oefeningen[r].video;
+}
+
+function openVideo(){
+if(currentVideo){
+window.open(currentVideo, "_blank");
+}
 }
 </script>
 
