@@ -6,55 +6,115 @@
 
 <style>
 body {
-    font-family: Arial;
-    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
     background: #fff6eb;
+    margin: 0;
+    text-align: center;
 }
 
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #ff9800, #ffb74d);
+    color: white;
+    padding: 30px;
+    font-size: 28px;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* BOX */
 .box {
     background: white;
-    margin: 40px auto;
     padding: 25px;
-    width: 320px;
     border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
+/* BUTTON */
 button {
-    padding: 15px;
+    padding: 15px 20px;
     font-size: 18px;
     background: #ff9800;
     color: white;
     border: none;
     border-radius: 12px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #e68900;
+}
+
+/* TIP */
+.tip {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #555;
+}
+
+/* BACK */
+.back {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #ff9800;
+    font-weight: bold;
 }
 </style>
 </head>
 
 <body>
 
-<h1>🐶 Gevorderd Training</h1>
+<header>🐶 Gevorderd Training</header>
+
+<div class="container">
 
 <div class="box">
 <h2>Wat ga je doen?</h2>
-<p>
-Meer uitdaging! Je hond leert combineren en beter luisteren.
-</p>
+<p>Meer uitdaging en beweging voor jou en je hond 💪</p>
+</div>
 
-<p id="challenge">Klik hieronder om te starten 👇</p>
+<div class="box">
+<h2>🎯 Oefening</h2>
+<p id="challenge">Klik op start 👇</p>
 
-<button onclick="nieuweChallenge()">Start oefening</button>
+<button onclick="nieuweChallenge()">Start training</button>
+
+<p class="tip" id="tip"></p>
+</div>
+
+<a href="levels.html" class="back">⬅ Terug naar niveaus</a>
+
 </div>
 
 <script>
+
 const oefeningen = [
-"Slalom door je benen 🚶‍♀️",
-"5x zit en lig 🔁",
-"Focus 5 seconden 🎯"
+{
+tekst: "Slalom door je benen 🚶‍♀️",
+tip: "Gebruik je hand of snoepje om je hond door je benen te leiden"
+},
+{
+tekst: "5x zit en lig 🔁",
+tip: "Werk rustig en beloof telkens na elke goede herhaling"
+},
+{
+tekst: "Focus 5 seconden 🎯",
+tip: "Beloon je hond zodra hij jou blijft aankijken"
+}
 ];
 
 function nieuweChallenge() {
 let random = Math.floor(Math.random() * oefeningen.length);
-document.getElementById("challenge").innerText = oefeningen[random];
+
+document.getElementById("challenge").innerText = oefeningen[random].tekst;
+document.getElementById("tip").innerText = "💡 Tip: " + oefeningen[random].tip;
 }
 </script>
 
