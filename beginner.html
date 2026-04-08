@@ -6,30 +6,84 @@
 <title>Beginner Training</title>
 
 <style>
-body { font-family:'Segoe UI'; background:#f9f6f2; margin:0; }
-
-header { background:#4CAF50; color:white; padding:30px; text-align:center; }
-
-.container { max-width:700px; margin:auto; padding:20px; }
-
-.section { background:white; padding:25px; border-radius:15px; margin-bottom:20px; }
-
-button {
-padding:12px 18px;
-background:#4CAF50;
-color:white;
-border:none;
-border-radius:8px;
-margin:5px;
-cursor:pointer;
+body {
+    font-family:'Segoe UI';
+    background:#f9f6f2;
+    margin:0;
 }
 
-.back { text-decoration:none; color:#4CAF50; }
+/* HEADER */
+header {
+    background:#4CAF50;
+    color:white;
+    padding:25px;
+    text-align:center;
+    font-size:24px;
+}
+
+/* LAYOUT */
+.wrapper {
+    display:flex;
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+    gap:20px;
+}
+
+/* LINKS */
+.sidebar-left {
+    width:200px;
+}
+
+.sidebar-left img {
+    width:100%;
+    border-radius:10px;
+}
+
+/* MIDDEN */
+.main {
+    flex:1;
+}
+
+.section {
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+
+/* RECHTS */
+.sidebar-right {
+    width:200px;
+}
+
+.box {
+    background:white;
+    padding:15px;
+    border-radius:10px;
+}
+
+/* BUTTON */
+button {
+    padding:12px;
+    background:#4CAF50;
+    color:white;
+    border:none;
+    border-radius:8px;
+    margin-top:10px;
+    cursor:pointer;
+}
 
 /* MOBILE */
-@media (max-width:600px){
-.section { padding:15px; }
-button { width:100%; }
+@media (max-width:800px){
+.wrapper {
+    flex-direction:column;
+}
+
+.sidebar-left,
+.sidebar-right {
+    width:100%;
+}
 }
 </style>
 </head>
@@ -38,12 +92,19 @@ button { width:100%; }
 
 <header>Beginner Training</header>
 
-<div class="container">
+<div class="wrapper">
+
+<!-- LINKS -->
+<div class="sidebar-left">
+<img src="https://placedog.net/200/200" alt="Logo">
+</div>
+
+<!-- MIDDEN -->
+<div class="main">
 
 <div class="section">
 <h2>Oefening</h2>
 <p id="challenge">Klik op start</p>
-
 <button onclick="nieuweChallenge()">Nieuwe oefening</button>
 </div>
 
@@ -52,19 +113,29 @@ button { width:100%; }
 <p id="tip"></p>
 </div>
 
-<a href="levels.html" class="back">⬅ Terug</a>
+</div>
+
+<!-- RECHTS -->
+<div class="sidebar-right">
+<div class="box">
+<h3>💡 Extra tip</h3>
+<p>Train kort (5-10 min) en eindig positief.</p>
+</div>
+
+<div class="box" style="margin-top:10px;">
+<h3>🐾 Tip van de dag</h3>
+<p>Gebruik beloningen op het juiste moment.</p>
+</div>
+</div>
 
 </div>
 
 <script>
 const oefeningen = [
-{tekst:"Zitten",tip:"Gebruik een snoepje boven het hoofd"},
-{tekst:"Liggen",tip:"Beweeg snoepje naar beneden"},
-{tekst:"Pootje geven",tip:"Tik zacht tegen de poot"},
-{tekst:"Hier komen",tip:"Roep vrolijk"},
-{tekst:"Naam herkennen",tip:"Beloon reactie"},
-{tekst:"Oogcontact",tip:"Beloon kijken"},
-{tekst:"Rustig blijven",tip:"Beloon kalm gedrag"}
+{tekst:"Zitten",tip:"Gebruik snoepje boven hoofd"},
+{tekst:"Liggen",tip:"Beweeg naar beneden"},
+{tekst:"Pootje geven",tip:"Tik zacht tegen poot"},
+{tekst:"Hier komen",tip:"Roep vrolijk"}
 ];
 
 function nieuweChallenge(){
