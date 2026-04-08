@@ -2,6 +2,7 @@
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Beginner Training</title>
 
 <style>
@@ -23,7 +24,13 @@ margin:5px;
 cursor:pointer;
 }
 
-.video-btn { background:#2196F3; }
+.back { text-decoration:none; color:#4CAF50; }
+
+/* MOBILE */
+@media (max-width:600px){
+.section { padding:15px; }
+button { width:100%; }
+}
 </style>
 </head>
 
@@ -38,7 +45,6 @@ cursor:pointer;
 <p id="challenge">Klik op start</p>
 
 <button onclick="nieuweChallenge()">Nieuwe oefening</button>
-<button class="video-btn" onclick="openVideo()">🎥 Video</button>
 </div>
 
 <div class="section">
@@ -46,48 +52,25 @@ cursor:pointer;
 <p id="tip"></p>
 </div>
 
+<a href="levels.html" class="back">⬅ Terug</a>
+
 </div>
 
 <script>
-let currentVideo = "";
-
 const oefeningen = [
-{
-tekst:"Zitten",
-tip:"Gebruik een snoepje boven het hoofd",
-video:"https://www.youtube.com/watch?v=Qm9v1m3yX5g"
-},
-{
-tekst:"Liggen",
-tip:"Beweeg snoepje naar beneden",
-video:"https://www.youtube.com/watch?v=8n1rH5p9YJ0"
-},
-{
-tekst:"Pootje geven",
-tip:"Tik zacht tegen de poot",
-video:"https://www.youtube.com/watch?v=YJv1m2s9QWk"
-},
-{
-tekst:"Hier komen",
-tip:"Roep vrolijk",
-video:"https://www.youtube.com/watch?v=Z3mZ7Yy3XwQ"
-}
+{tekst:"Zitten",tip:"Gebruik een snoepje boven het hoofd"},
+{tekst:"Liggen",tip:"Beweeg snoepje naar beneden"},
+{tekst:"Pootje geven",tip:"Tik zacht tegen de poot"},
+{tekst:"Hier komen",tip:"Roep vrolijk"},
+{tekst:"Naam herkennen",tip:"Beloon reactie"},
+{tekst:"Oogcontact",tip:"Beloon kijken"},
+{tekst:"Rustig blijven",tip:"Beloon kalm gedrag"}
 ];
 
 function nieuweChallenge(){
 let r=Math.floor(Math.random()*oefeningen.length);
-
 document.getElementById("challenge").innerText=oefeningen[r].tekst;
 document.getElementById("tip").innerText=oefeningen[r].tip;
-currentVideo = oefeningen[r].video;
-}
-
-function openVideo(){
-if(currentVideo){
-window.open(currentVideo, "_blank");
-} else {
-alert("Klik eerst op een oefening");
-}
 }
 </script>
 
