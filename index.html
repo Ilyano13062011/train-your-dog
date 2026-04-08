@@ -2,76 +2,29 @@
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Train Your Dog 🐶</title>
 
 <style>
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: Arial;
+    text-align: center;
     background: #fff6eb;
 }
 
-/* HEADER */
 header {
-    background: linear-gradient(135deg, #ff8a00, #ffb347);
+    background: orange;
     color: white;
-    text-align: center;
-    padding: 40px 20px;
-    font-size: 36px;
-    font-weight: bold;
-}
-
-/* CONTAINER */
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-}
-
-/* INTRO */
-.intro {
-    background: white;
-    padding: 25px;
-    border-radius: 20px;
-    margin-bottom: 25px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.intro h1 {
-    margin: 0;
+    padding: 30px;
     font-size: 32px;
 }
 
-/* CHALLENGE */
-.challenge {
-    background: white;
-    padding: 25px;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* LEVEL BUTTONS */
-.levels {
-    margin: 10px;
-}
-
-.levels button {
-    margin: 5px;
-    padding: 8px 14px;
-    font-size: 14px;
-}
-
-/* BUTTON */
 button {
-    padding: 12px 20px;
-    border: none;
-    border-radius: 12px;
-    background: #ff8a00;
+    padding: 20px 30px;
+    font-size: 20px;
+    background: orange;
     color: white;
-    font-size: 16px;
+    border: none;
+    border-radius: 15px;
     cursor: pointer;
 }
 
@@ -79,150 +32,24 @@ button:hover {
     background: #e67600;
 }
 
-/* SCORE */
-.score {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
-/* GALLERY */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    text-decoration: none;
-    color: black;
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-.card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-
-.card h3 {
-    margin: 10px;
-}
-
-/* FOOTER */
-footer {
-    background: #ff8a00;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 30px;
+.container {
+    margin-top: 80px;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-🐶 Train Your Dog
-</header>
+<header>🐶 Train Your Dog</header>
 
 <div class="container">
+<h1>Maak trainen leuk!</h1>
+<p>Klaar om te starten?</p>
 
-<div class="intro">
-<h1>Train, speel en leer samen!</h1>
-<p>Klik op een oefening en ontdek tips en uitleg 👇</p>
-</div>
-
-<div class="challenge">
-<h2>🎯 Challenge van de dag</h2>
-
-<div class="levels">
-<button onclick="setLevel('beginner')">Beginner</button>
-<button onclick="setLevel('gevorderd')">Gevorderd</button>
-<button onclick="setLevel('expert')">Expert</button>
-</div>
-
-<p id="challenge">Klik op de knop!</p>
-<button onclick="nieuweChallenge()">Nieuwe challenge</button>
-</div>
-
-<div class="score">
-🏆 Score: <span id="score">0</span>
-</div>
-
-<div class="gallery">
-
-<a href="balans.html" class="card">
-<img src="https://placedog.net/400/300?id=1">
-<h3>🐾 Balans</h3>
+<a href="levels.html">
+<button>🚀 Start de training</button>
 </a>
-
-<a href="focus.html" class="card">
-<img src="https://placedog.net/400/300?id=2">
-<h3>🎯 Focus</h3>
-</a>
-
-<a href="draaien.html" class="card">
-<img src="https://placedog.net/400/300?id=3">
-<h3>🌀 Draaien</h3>
-</a>
-
-<a href="pootje.html" class="card">
-<img src="https://placedog.net/400/300?id=4">
-<h3>🤝 Pootje</h3>
-</a>
-
 </div>
-
-</div>
-
-<footer>
-❤️ Veel plezier met trainen!
-</footer>
-
-<script>
-let score = 0;
-let level = "beginner";
-
-function setLevel(lvl) {
-    level = lvl;
-    document.getElementById("challenge").innerText = "Klik voor een challenge!";
-}
-
-const challenges = {
-    beginner: [
-        "Laat je hond zitten 🐶",
-        "Geef 2 pootjes 🤝",
-        "Laat je hond liggen 💤"
-    ],
-    gevorderd: [
-        "5x zit en lig 🔁",
-        "Slalom door je benen 🚶‍♀️",
-        "Focus 5 seconden 🎯"
-    ],
-    expert: [
-        "10 sec balans 🐾",
-        "Draai 3 rondjes 🌀",
-        "Loop achteruit 🔄"
-    ]
-};
-
-function nieuweChallenge() {
-    let lijst = challenges[level];
-    let random = Math.floor(Math.random() * lijst.length);
-    document.getElementById("challenge").innerText = lijst[random];
-
-    score++;
-    document.getElementById("score").innerText = score;
-}
-</script>
 
 </body>
 </html>
