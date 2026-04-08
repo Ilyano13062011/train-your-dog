@@ -1,5 +1,62 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Gevorderd Training</title>
+
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+    background: #fff6eb;
+}
+
+.box {
+    background: white;
+    margin: 40px auto;
+    padding: 25px;
+    width: 320px;
+    border-radius: 20px;
+}
+
+button {
+    padding: 15px;
+    font-size: 18px;
+    background: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🐶 Gevorderd Training</h1>
+
+<div class="box">
+<h2>Wat ga je doen?</h2>
+<p>
+Meer uitdaging! Je hond leert combineren en beter luisteren.
+</p>
+
+<p id="challenge">Klik hieronder om te starten 👇</p>
+
+<button onclick="nieuweChallenge()">Start oefening</button>
+</div>
+
+<script>
 const oefeningen = [
 "Slalom door je benen 🚶‍♀️",
 "5x zit en lig 🔁",
 "Focus 5 seconden 🎯"
 ];
+
+function nieuweChallenge() {
+let random = Math.floor(Math.random() * oefeningen.length);
+document.getElementById("challenge").innerText = oefeningen[random];
+}
+</script>
+
+</body>
+</html>
