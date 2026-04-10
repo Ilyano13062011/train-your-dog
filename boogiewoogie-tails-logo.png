@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Train Your Dog</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f6f2;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ff8a00, #ffb347);
+      color: white;
+      text-align: center;
+      padding: 40px 20px 30px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 34px;
+    }
+
+    header p {
+      margin: 10px 0 0;
+      font-size: 18px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 30px 20px 50px;
+    }
+
+    .top-action {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .logo-box {
+      background: white;
+      padding: 10px;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    .logo-box img {
+      width: 120px;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .start-btn {
+      display: inline-block;
+      background: #ff8a00;
+      color: white;
+      text-decoration: none;
+      padding: 18px 28px;
+      border-radius: 14px;
+      font-size: 20px;
+      font-weight: 600;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      transition: 0.2s ease;
+    }
+
+    .start-btn:hover {
+      background: #e67600;
+      transform: translateY(-2px);
+    }
+
+    .intro-box {
+      background: white;
+      padding: 30px;
+      border-radius: 22px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .intro-box h2 {
+      margin-top: 0;
+      font-size: 28px;
+      color: #222;
+    }
+
+    .intro-box p {
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .info-box {
+      background: white;
+      padding: 22px;
+      border-radius: 18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .info-box h3 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+
+    .info-box p {
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+
+    footer {
+      background: #ff8a00;
+      color: white;
+      text-align: center;
+      padding: 18px;
+      font-size: 16px;
+    }
+
+    @media (max-width: 850px) {
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 28px;
+      }
+
+      header p {
+        font-size: 16px;
+      }
+
+      .logo-box img {
+        width: 95px;
+      }
+
+      .start-btn {
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+      }
+
+      .intro-box {
+        padding: 22px;
+      }
+
+      .intro-box h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🐶 Train Your Dog</h1>
+    <p>Train je hond op een leuke en duidelijke manier</p>
+  </header>
+
+  <div class="container">
+
+    <div class="top-action">
+      <div class="logo-box">
+        <img src="boogiewoogie-tails-logo.png" alt="Boogiewoogie Tails logo">
+      </div>
+
+      <a href="levels.html" class="start-btn">🚀 Start de training</a>
+    </div>
+
+    <div class="intro-box">
+      <h2>Samen werken aan een betere band met je hond</h2>
+      <p>
+        Ontdek oefeningen op jouw niveau en train stap voor stap.
+        Van basisvaardigheden tot meer controle en moeilijkere opdrachten:
+        alles is opgebouwd om op een duidelijke en fijne manier met je hond te werken.
+      </p>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-box">
+        <h3>🐾 Duidelijke oefeningen</h3>
+        <p>Elke oefening is eenvoudig opgebouwd en makkelijk te volgen.</p>
+      </div>
+
+      <div class="info-box">
+        <h3>🎯 Gericht trainen</h3>
+        <p>Werk aan focus, controle en samenwerking met je hond.</p>
+      </div>
+
+      <div class="info-box">
+        <h3>💪 Voor elk niveau</h3>
+        <p>Begin rustig en bouw verder op naar gevorderde oefeningen.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    ❤️ Veel plezier met trainen!
+  </footer>
+
+</body>
+</html>
