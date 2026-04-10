@@ -6,52 +6,80 @@
 <title>Train Your Dog</title>
 
 <style>
-body { margin:0; font-family:'Segoe UI'; background:#f9f6f2; }
+body {
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:#f9f6f2;
+}
 
+/* HEADER */
 header {
 background:linear-gradient(135deg,#ff8a00,#ffb347);
 color:white;
 text-align:center;
-padding:40px;
+padding:50px 20px;
 }
 
-.container { max-width:1100px; margin:auto; padding:20px; }
+header h1 {
+margin:0;
+font-size:32px;
+}
 
-.cards {
+/* HERO */
+.hero {
+max-width:1000px;
+margin:auto;
+padding:20px;
+text-align:center;
+}
+
+/* IMAGE */
+.hero img {
+width:100%;
+max-width:400px;
+border-radius:20px;
+margin:20px 0;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* BUTTON */
+.btn {
+display:inline-block;
+padding:18px 30px;
+background:#ff8a00;
+color:white;
+border-radius:12px;
+text-decoration:none;
+font-size:18px;
+margin-top:20px;
+}
+
+.btn:hover {
+background:#e67600;
+}
+
+/* INFO */
+.info {
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
+margin-top:40px;
 }
 
-.card {
+.box {
 background:white;
+padding:20px;
 border-radius:15px;
-overflow:hidden;
-text-align:center;
 box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
-.card img {
-width:100%;
-height:180px;
-object-fit:cover;
-}
-
-.btn {
-display:inline-block;
-margin:20px;
-padding:15px 25px;
-background:#ff8a00;
-color:white;
-border-radius:10px;
-text-decoration:none;
-}
-
+/* FOOTER */
 footer {
 background:#ff8a00;
 color:white;
 text-align:center;
 padding:20px;
+margin-top:40px;
 }
 </style>
 </head>
@@ -63,35 +91,44 @@ padding:20px;
 <p>Train je hond op een leuke en duidelijke manier</p>
 </header>
 
-<div class="container">
+<div class="hero">
 
-<a href="levels.html" class="btn">Start de training</a>
+<h2>Samen werken aan een betere band met je hond</h2>
 
-<div class="cards">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1">
-<h3>Beginner</h3>
-<p>Puppy training</p>
-</div>
-
-<div class="card">
+<!-- 🔥 HIER KAN JE LOGO / AFBEELDING -->
 <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16">
-<h3>Gevorderd</h3>
-<p>Volwassen hond</p>
+
+<p>
+Ontdek oefeningen op jouw niveau en train stap voor stap.
+Van basis tot gevorderd, alles is gericht op samenwerking en plezier.
+</p>
+
+<a href="levels.html" class="btn">🚀 Start de training</a>
+
+<div class="info">
+
+<div class="box">
+<h3>🐾 Duidelijke stappen</h3>
+<p>Elke oefening is simpel en makkelijk te volgen.</p>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b">
-<h3>Expert</h3>
-<p>Actieve hond</p>
+<div class="box">
+<h3>🎯 Doelgericht trainen</h3>
+<p>Werk aan focus, controle en samenwerking.</p>
+</div>
+
+<div class="box">
+<h3>💪 Voor elk niveau</h3>
+<p>Begin rustig en bouw op naar moeilijkere oefeningen.</p>
 </div>
 
 </div>
 
 </div>
 
-<footer>Veel plezier met trainen!</footer>
+<footer>
+❤️ Veel plezier met trainen!
+</footer>
 
 </body>
 </html>
